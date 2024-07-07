@@ -50,8 +50,7 @@ class SendSmsToProviderJob extends QueuedJob
                             dump($notification->getAttribute('count_try'));
                             $notificationService->decreaseCountTry($notificationId);
                             SendSmsToProviderJob::dispatch($notificationId);
-                        } elseif ($notification->getAttribute('count_try') == 0) {
-                            dump('failed not');
+                        } elseif ($notification->getAttribute('count_try') == 0) {;
                             $notificationService->failedNotification($notificationId);
                         }
                     }
