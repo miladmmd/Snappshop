@@ -23,7 +23,9 @@ class Transaction extends Model
         'client_tracking',
         'currency',
         'type',
-        'status'
+        'status',
+        'created_at',
+        'updated_at'
     ];
 
     protected $casts = [

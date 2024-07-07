@@ -2,6 +2,7 @@
 
 namespace Modules\Payment\Helpers;
 
+use Carbon\Carbon;
 use Modules\Payment\Dtos\P2pTransferDto;
 use Modules\Payment\Dtos\StoreFeeDto;
 use Modules\Payment\Dtos\StoreTransactionDto;
@@ -53,6 +54,7 @@ class DtoHelper
         $dto->setCreditCardId($transferDto->getRecipientCreditCardId());
         $dto->setTransactionStatusEnum(TransactionStatusEnum::SUCCESS);
         $dto->setTransactionTypeEnum(TransactionTypeEnum::CREDIT);
+        $dto->setCreatedAt(Carbon::now());
         return $dto;
     }
 
@@ -66,6 +68,7 @@ class DtoHelper
         $dto->setCreditCardId($transferDto->getDepositorCreditCardId());
         $dto->setTransactionStatusEnum(TransactionStatusEnum::SUCCESS);
         $dto->setTransactionTypeEnum(TransactionTypeEnum::DEBIT);
+        $dto->setCreatedAt(Carbon::now());
         return $dto;
     }
 
@@ -78,6 +81,7 @@ class DtoHelper
         $dto->setCreditCardId($transferDto->getDepositorCreditCardId());
         $dto->setTransactionStatusEnum(TransactionStatusEnum::SUCCESS);
         $dto->setTransactionTypeEnum(TransactionTypeEnum::DEBIT);
+        $dto->setCreatedAt(Carbon::now());
         return $dto;
     }
 

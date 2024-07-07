@@ -2,8 +2,10 @@
 
 namespace Modules\Payment\Dtos;
 
+use DateTime;
 use Modules\Payment\Enums\TransactionStatusEnum;
 use Modules\Payment\Enums\TransactionTypeEnum;
+use Carbon\Carbon;
 
 class StoreTransactionDto extends BaseDto
 {
@@ -13,6 +15,23 @@ class StoreTransactionDto extends BaseDto
     protected ?string $currency;
     protected ?TransactionTypeEnum $type;
     protected ?TransactionStatusEnum $status;
+    protected ?DateTime $createdAt;
+
+    /**
+     * @return Carbon
+     */
+    public function getCreatedAt(): DateTime
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param Carbon $createdAt
+     */
+    public function setCreatedAt(DateTime $createdAt): void
+    {
+        $this->createdAt = $createdAt;
+    }
 
     public function getCreditCardId(): ?int
     {
