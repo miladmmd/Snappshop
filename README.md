@@ -25,6 +25,7 @@
    Inside the container, run the database migrations:
 
    ```bash
+   composer install
    php artisan migrate
    ```
 
