@@ -25,7 +25,12 @@
    Inside the container, run the database migrations:
 
    ```bash
-   composer install
+   composer install9. **Set Permissions**
+
+   To avoid permission issues, set the permissions for the project directory:
+   ```bash
+   sudo chmod -R 777 /path/to/your/project
+   ```
    php artisan migrate
    ```
 
@@ -55,7 +60,12 @@
 
    **Example Request Body:**
 
-   ```json
+   ```json9. **Set Permissions**
+
+   To avoid permission issues, set the permissions for the project directory:
+   ```bash
+   sudo chmod -R 777 /path/to/your/project
+   ```
    {
        "from": "6396074154947992",
        "to": "5054168947608849",
@@ -76,4 +86,11 @@
 8. **Nginx Port Configuration**
 
    The Nginx server is configured to listen on port `8002`. Ensure that you use this port to access the application.
+
+9. **Set Permissions**
+
+   To avoid permission issues, set the permissions for the project directory:
+   ```bash
+   sudo chmod -R 777 /path/to/your/project
+   ```
 
